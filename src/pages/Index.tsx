@@ -15,11 +15,36 @@ interface Game {
   price: number;
   image: string;
   description: string;
+  links?: {
+    ozon?: string;
+    wildberries?: string;
+    igroved?: string;
+    hobbygames?: string;
+    mosigra?: string;
+  };
 }
 
 const games: Game[] = [
   {
     id: 1,
+    title: 'Сырный замок',
+    genre: 'Стратегия',
+    age: '3+',
+    players: '2-4',
+    duration: '20-30 мин',
+    price: 3290,
+    image: 'https://cdn.poehali.dev/projects/39169459-c436-41e4-a6ba-8277da7c9219/files/5e6388d8-028c-4950-81e2-80f7546eb66a.jpg',
+    description: 'Мышки собирают сырную коллекцию в старом замке с ловушками',
+    links: {
+      ozon: 'https://www.ozon.ru/product/nastolnaya-igra-syrnyy-zamok-5501859/',
+      wildberries: 'https://www.wildberries.ru/catalog/14111120/detail.aspx',
+      igroved: 'https://www.igroved.ru/games/burg-appenzell/',
+      hobbygames: 'https://hobbygames.ru/sirnij-zamok',
+      mosigra: 'https://www.mosigra.ru/sirnij-zamok/'
+    }
+  },
+  {
+    id: 2,
     title: 'Королевство драконов',
     genre: 'Стратегия',
     age: '8+',
@@ -109,7 +134,7 @@ const games: Game[] = [
 ];
 
 const genres = ['Все', 'Стратегия', 'Приключения', 'Детектив', 'Семейная', 'Научная фантастика', 'Хоррор'];
-const ages = ['Все', '5+', '6+', '7+', '8+', '9+', '10+', '12+'];
+const ages = ['Все', '3+', '5+', '6+', '7+', '8+', '9+', '10+', '12+'];
 const playerCounts = ['Все', '2', '3', '4', '5', '6'];
 
 export default function Index() {
@@ -295,11 +320,69 @@ export default function Index() {
                     </div>
                   </div>
                 </CardContent>
-                <CardFooter className="p-4 pt-0">
-                  <Button className="w-full group-hover:bg-secondary transition-colors">
-                    <Icon name="ShoppingCart" size={18} className="mr-2" />
-                    Добавить в корзину
-                  </Button>
+                <CardFooter className="p-4 pt-0 flex flex-col gap-2">
+                  {game.links ? (
+                    <div className="w-full space-y-2">
+                      <p className="text-xs font-semibold text-muted-foreground text-center mb-2">Купить на:</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {game.links.ozon && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs hover:bg-primary hover:text-primary-foreground"
+                            onClick={() => window.open(game.links!.ozon, '_blank')}
+                          >
+                            Ozon
+                          </Button>
+                        )}
+                        {game.links.wildberries && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs hover:bg-primary hover:text-primary-foreground"
+                            onClick={() => window.open(game.links!.wildberries, '_blank')}
+                          >
+                            Wildberries
+                          </Button>
+                        )}
+                        {game.links.igroved && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs hover:bg-primary hover:text-primary-foreground"
+                            onClick={() => window.open(game.links!.igroved, '_blank')}
+                          >
+                            Игровед
+                          </Button>
+                        )}
+                        {game.links.hobbygames && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs hover:bg-primary hover:text-primary-foreground"
+                            onClick={() => window.open(game.links!.hobbygames, '_blank')}
+                          >
+                            Hobby Games
+                          </Button>
+                        )}
+                        {game.links.mosigra && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs hover:bg-primary hover:text-primary-foreground col-span-2"
+                            onClick={() => window.open(game.links!.mosigra, '_blank')}
+                          >
+                            Мосигра
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <Button className="w-full group-hover:bg-secondary transition-colors">
+                      <Icon name="ShoppingCart" size={18} className="mr-2" />
+                      Добавить в корзину
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             ))}
