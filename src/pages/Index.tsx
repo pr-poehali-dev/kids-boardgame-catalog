@@ -33,7 +33,7 @@ const games: Game[] = [
     players: '2-4',
     duration: '20-30 мин',
     price: 3290,
-    image: 'https://cdn.poehali.dev/projects/39169459-c436-41e4-a6ba-8277da7c9219/files/5e6388d8-028c-4950-81e2-80f7546eb66a.jpg',
+    image: 'https://cdn1.ozone.ru/s3/multimedia-o/6017233080.jpg',
     description: 'Мышки собирают сырную коллекцию в старом замке с ловушками',
     links: {
       ozon: 'https://www.ozon.ru/product/nastolnaya-igra-syrnyy-zamok-5501859/',
@@ -42,10 +42,26 @@ const games: Game[] = [
       hobbygames: 'https://hobbygames.ru/sirnij-zamok',
       mosigra: 'https://www.mosigra.ru/sirnij-zamok/'
     }
+  },
+  {
+    id: 2,
+    title: 'Микадо',
+    genre: 'Ловкость',
+    age: '6+',
+    players: '2-8',
+    duration: '15-30 мин',
+    price: 495,
+    image: 'https://cdn1.ozone.ru/s3/multimedia-d/6017185349.jpg',
+    description: 'Вытащите палочку из кучи, не задев остальные. Игра на ловкость и концентрацию',
+    links: {
+      ozon: 'https://www.ozon.ru/product/dorozhnaya-igra-mikado-vozmi-s-soboy-164446316/',
+      wildberries: 'https://www.wildberries.ru/catalog/9017880/detail.aspx',
+      igroved: 'https://www.igroved.ru/games/mikado-series/mikado/'
+    }
   }
 ];
 
-const genres = ['Все', 'Стратегия', 'Приключения', 'Детектив', 'Семейная', 'Научная фантастика', 'Хоррор'];
+const genres = ['Все', 'Стратегия', 'Приключения', 'Детектив', 'Семейная', 'Научная фантастика', 'Хоррор', 'Ловкость'];
 const ages = ['Все', '3+', '5+', '6+', '7+', '8+', '9+', '10+', '12+'];
 const playerCounts = ['Все', '2', '3', '4', '5', '6'];
 
