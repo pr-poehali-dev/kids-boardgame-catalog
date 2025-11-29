@@ -33,7 +33,7 @@ const games: Game[] = [
     players: '2-4',
     duration: '20-30 мин',
     price: 3290,
-    image: 'https://cdn1.ozone.ru/s3/multimedia-o/6017233080.jpg',
+    image: 'https://cdn.poehali.dev/files/b6595022-e00a-4a21-907e-ee789d021ca8.jpg',
     description: 'Мышки собирают сырную коллекцию в старом замке с ловушками',
     links: {
       ozon: 'https://www.ozon.ru/product/nastolnaya-igra-syrnyy-zamok-5501859/',
